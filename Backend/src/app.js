@@ -14,7 +14,7 @@ const index = require('./routes/index')
 app.use(index);
 
 const usersRouter = require('./routes/user.routes')
-app.use("/", usersRouter)
+app.use("/api", usersRouter)
 
 
 module.exports = app;

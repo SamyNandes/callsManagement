@@ -1,25 +1,17 @@
 const userModel = require('../models/user.model.js') 
+const userController = require('../controllers/user.controllers.js') 
 const express = require('express')
-const router = express.Router()
+const router = express()
+const auth = require("../middlewares/auth.js")
 
-router.post("/", async (req, res) => {
-    const {name, email, senha} = req.body
+// ==> Rota responsável por Criar um novo 'User': (POST): localhost:3000/api/register
+router.post("/register", userController.userController)
 
-    if (!name || !email || !senha){
-        try {
-            
-        } catch (error) {
-            res.status(500).send(error.message)
-        }
-    }
-    try {
-        const user = await userModel.create(req.body)
-        return res.status(201).json(user)
-    } catch (error) {
-        console.log(req.body)
-        console.log(`Um erro ocorreu: ${error}`)
-        res.status(500).send(error.message)
-    }
-})
+// ==> Rota responsável por fazer o Login de 'User': (POST): localhost:3000/api/login
+router.post("/login", userController.userLogin)
+
+
+// ==> Rota responsável por retornar 'User': (GET): localhost:3000/api/return
+router.get("/return", auth, userController.returnUser)
 
 module.exports = router

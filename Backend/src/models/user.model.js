@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+require('dotenv').config()
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -29,7 +30,7 @@ userSchema.pre('save', async function(next) {
         if (user.isModified('password')){
             user.password = await bcrypt.hash(user.password, 8)
             }
-        const token = jwt.sign({ _id: user._id, name: user.name, email: user.email }, 'secret');
+        const token = jwt.sign({ _id: user._id, name: user.name, email: user.email }, process.env.JWT_SECRET);
         user.tokens = {token};
     } catch (error) {
         console.log(`Ocorreu um ${error}`)
@@ -37,21 +38,5 @@ userSchema.pre('save', async function(next) {
     }
     next()
 })
-
-userSchema.methods.generateAuthToken = async () => {
-    const user = this;
-
-}
-
-
-userSchema.statics.finByCredentials = async (email, password) => {
-    const user  = await User.findOne({ email });
-    console.log(user)
-    const isPasswordMatch = await bcrpt.compare(password, user.password)
-    if(!user || !isPasswordMatch) {
-        throw new Error ({ error: 'Login inválido!'})
-    } 
-    return user;
-}
 
 module.exports = mongoose.model("User", userSchema)
