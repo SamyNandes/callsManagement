@@ -1,6 +1,7 @@
 import { required, email, minLength } from '@vuelidate/validators'
 import useVuelidate from '@vuelidate/core'
 import swal from 'sweetalert'
+import LoginService from '@/services/LoginService'
 
 export default {
   name: 'LoginComponent',
@@ -24,17 +25,14 @@ export default {
   methods: {
     async submitLoginInfos() {
       const estado = await this.v$.$validate()
-      if (!estado) {
-        swal({
-          title: 'Oops!',
-          text: 'Preencha os campos corretamente',
-          icon: 'error',
-        })
+      if (estado) {
+        const infoUserLogin = this.dataUserLogin
+        LoginService.loginUser(infoUserLogin)
       } else {
         swal({
-          title: 'Oba!',
-          text: 'Login realizado com sucesso!',
-          icon: 'success',
+          title: 'Oops!',
+          text: 'Não foi possivel logar',
+          icon: 'error',
         })
       }
     },

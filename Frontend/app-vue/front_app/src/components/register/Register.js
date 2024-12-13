@@ -25,11 +25,6 @@ export default {
           icon: 'error',
         })
       } else {
-        swal({
-          title: 'Success!',
-          text: 'User succesfully registred!',
-          icon: 'success',
-        })
         console.log(this.dataUserRegister)
         RegisterService.registerUser(this.dataUserRegister)
       }

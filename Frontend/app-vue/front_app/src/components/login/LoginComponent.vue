@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <h1>Login Page</h1>
-  </div>
   <div class="container w-100 d-flex justify-content-center align-items-center"
     style="padding: 50px 0px; height: 700px;">
     <div class="row w-50 h-70 shadow rounded p-5 d-flex flex-column align-items-center">
+      <div class="d-flex flex-row justify-content-center m-3">
+        <h1>Login page <i class="fi fi-rr-user"></i></h1>
+      </div>
       <form class="d-flex flex-column align-items-center">
         <div class="inputs">
           <label for="email" class="w-50">Insert your email: </label>

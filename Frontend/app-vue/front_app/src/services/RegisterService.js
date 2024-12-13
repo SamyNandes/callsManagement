@@ -5,10 +5,15 @@ export default {
   async registerUser(newUser) {
     try {
       await Api().post('/register', newUser)
+      swal({
+        title: 'Excelent!',
+        text: `Usuário registered!`,
+        icon: 'error',
+      })
     } catch {
       swal({
         title: 'Oops!',
-        text: `Usuário já cadastrado!`,
+        text: `User already registered!`,
         icon: 'error',
       })
     }

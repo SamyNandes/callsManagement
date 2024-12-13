@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h1>Register Page</h1>
-  </div>
   <div class="container w-100 d-flex justify-content-center align-items-center"
     style="padding: 50px 0px; height: 700px;">
     <div class="row w-50 h-70 shadow rounded p-5 d-flex align-items-center justify-content-center">
-      <form class="d-flex flex-column align-items-center">
+      <div class="d-flex flex-row justify-content-center m-3">
+        <h1>Register Page <i class="fi fi-rr-edit"></i></h1>
+      </div>
+      <form class="d-flex flex-column align-items-center ">
         <div class="inputs">
           <label for="name" class="w-50">Insert a name: </label>
           <input class="mb-3 w-50" id="name" type="text" placeholder="Name"
