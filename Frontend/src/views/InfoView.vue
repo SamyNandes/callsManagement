@@ -1,26 +1,27 @@
 <!------------------------------------------------------------------------
   Autor: Samyra Fernandes da Silva
-  Data: 07/12/2024
-  Descrição: Importação do componente de registro.
+  Data: 15/12/2024
+  Descrição: Importação do componente de info.
   Tecnologias: Vue.Js.
   Dependências:
-    RegisterComponent - Um componente de registro.
+    RegisterComponent - Um componente de info.
   Instruções: Nenhuma
 ------------------------------------------------------------------------>
 
 <template>
-  <RegisterComponent />
+  <div>
+    <InfoComponent />
+  </div>
 </template>
 
-<script>
 
-import RegisterComponent from '@/components/register/RegisterComponent.vue';
+<script>
+import InfoComponent from "@/components/info/InfoComponent.vue";
 
 export default {
-  name: 'RegisterView',
+  name: 'InfoView',
   components: {
-    RegisterComponent,
+    InfoComponent,
   },
-};
-
+}
 </script>

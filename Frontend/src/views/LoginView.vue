@@ -1,25 +1,25 @@
 <!------------------------------------------------------------------------
   Autor: Samyra Fernandes da Silva
   Data: 07/12/2024
-  Descrição: Importação do componente de registro.
+  Descrição: Importação do componente de login.
   Tecnologias: Vue.Js.
   Dependências:
-    RegisterComponent - Um componente de registro.
+    RegisterComponent - Um componente de login.
   Instruções: Nenhuma
 ------------------------------------------------------------------------>
 
 <template>
-  <RegisterComponent />
+  <loginComponent />
 </template>
 
 <script>
 
-import RegisterComponent from '@/components/register/RegisterComponent.vue';
+import LoginComponent from '@/components/login/LoginComponent.vue';
 
 export default {
-  name: 'RegisterView',
+  name: "LoginView",
   components: {
-    RegisterComponent,
+    LoginComponent,
   },
 };
 

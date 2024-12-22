@@ -1,7 +1,7 @@
 <!------------------------------------------------------------------------
   Autor: Samyra Fernandes da Silva
-  Data: 07/12/2024
-  Descrição: Importação do componente de registro.
+  Data: 12/12/2024
+  Descrição: Componente principal do Vue.
   Tecnologias: Vue.Js.
   Dependências:
     RegisterComponent - Um componente de registro.

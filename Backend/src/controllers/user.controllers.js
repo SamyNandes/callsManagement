@@ -1,10 +1,25 @@
+/*-----------------------------------------------------------------------    
+  Autor: Samyra Fernandes da Silva  
+  Data: 15/12/2024  
+  Descrição: Lógicas de controle das rotas referente a user.
+  Tecnologias: Node.js.
+  Dependências: 
+    userModel - Módulo do esqueleto de User.
+    bcrypt - Módulo que criptografia senhas.
+    jwt - Módulo que transforma informações em token contendo Payload, Header e Verify Signature.
+  Instruções: Nenhuma.
+------------------------------------------------------------------------*/
+
 const userModel = require('../models/user.model.js') 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+
 require('dotenv').config()
 
+// ==> Função assincrona que realiza o cadastro de usuário.
 exports.userController = async (req, res) => {
     const {name, email, password} = req.body
+    req.body.admin = false;
     const userExists = await userModel.findOne({ email }, "email")
     if ( userExists != null){
         return res.status(500).send("Ops! Este email já está cadastrado, utilize um diferente :)")
@@ -21,7 +36,7 @@ exports.userController = async (req, res) => {
         }
         } 
 
-
+// ==> Função assincrona que realiza o login de usuário.
 exports.userLogin = async (req, res) => {
    try {
         const email = req.body.email
@@ -36,9 +51,11 @@ exports.userLogin = async (req, res) => {
         if(!isPasswordMatch) {
             return res.status(500).send(`Senha/Email inválido!`)
         } 
-
-        const token = jwt.sign({ _id: user._id, name: user.name, email: user.email }, process.env.JWT_SECRET);
+        console.log(user.admin + " Dentro do login do JWT")
+        const token = jwt.sign({ _id: user._id, name: user.name, email: user.email, admin: user.admin }, process.env.JWT_SECRET);
         user.tokens.push({ token });
+    
+        res.cookie('Token', token, { httpOnly: true } )
 
         return res.status(200).json({user});
    } catch (error) {
@@ -46,6 +63,7 @@ exports.userLogin = async (req, res) => {
     } 
 } 
 
+// ==> Função assincrona que realiza o retorno de usuário.
 exports.returnUser = async (req, res) => {
-    await res.json(req.userData);
+    await res.json(req.userToken);
 }

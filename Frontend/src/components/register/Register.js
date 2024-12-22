@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------------
   Autor: Samyra Fernandes da Silva
   Data: 16/12/2024
-  Descrição: Configuração dos metodos, dados e validações.
+  Descrição: Configuração dos componentes e das suas respectivas rotas.
   Tecnologias: Node.js e Vue.Js.
   Funções:
     useVuelidate - Função que permite o uso de validações nos campos

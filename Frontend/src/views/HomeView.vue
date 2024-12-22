@@ -1,26 +1,27 @@
 <!------------------------------------------------------------------------
   Autor: Samyra Fernandes da Silva
   Data: 07/12/2024
-  Descrição: Importação do componente de registro.
+  Descrição: Importação do componente de home.
   Tecnologias: Vue.Js.
   Dependências:
-    RegisterComponent - Um componente de registro.
+    RegisterComponent - Um componente de home.
   Instruções: Nenhuma
 ------------------------------------------------------------------------>
 
 <template>
-  <RegisterComponent />
+  <div>
+    <HomeComponent />
+  </div>
 </template>
 
-<script>
 
-import RegisterComponent from '@/components/register/RegisterComponent.vue';
+<script>
+import HomeComponent from "@/components/home/HomeComponent.vue";
 
 export default {
-  name: 'RegisterView',
+  name: 'HomeView',
   components: {
-    RegisterComponent,
+    HomeComponent,
   },
-};
-
+}
 </script>
