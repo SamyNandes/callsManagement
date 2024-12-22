@@ -19,7 +19,7 @@ require('dotenv').config()
 // ==> Função assincrona que realiza o cadastro de usuário.
 exports.userController = async (req, res) => {
     const {name, email, password} = req.body
-    req.body.admin = false;
+    req.body.admin = false; // ==> Para se tornar admin, mude aqui para "true"
     const userExists = await userModel.findOne({ email }, "email")
     if ( userExists != null){
         return res.status(500).send("Ops! Este email já está cadastrado, utilize um diferente :)")
