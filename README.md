@@ -3,68 +3,42 @@ An application for management of calls which contains two entities, admin and us
 
 # Directory structure
 
-Directory structure:
-└── samynandes-callsmanagement/
-    ├── README.md
-    ├── Backend/
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   ├── server.js
-    │   ├── .gitignore
-    │   └── src/
-    │       ├── app.js
-    │       ├── config/
-    │       │   ├── db.config.js
-    │       │   └── mongoose.config.js
-    │       ├── controllers/
-    │       │   ├── call.controllers.js
-    │       │   └── user.controllers.js
-    │       ├── middlewares/
-    │       │   └── auth.js
-    │       ├── models/
-    │       │   ├── call.model.js
-    │       │   └── user.model.js
-    │       └── routes/
-    │           ├── call.routes.js
-    │           └── user.routes.js
-    └── Frontend/
-        ├── README.md
-        ├── index.html
-        ├── jsconfig.json
-        ├── package-lock.json
-        ├── package.json
-        ├── vite.config.js
-        ├── .gitignore
-        └── src/
-            ├── App.vue
-            ├── main.js
-            ├── assets/
-            ├── components/
-            │   ├── home/
-            │   │   ├── Home.js
-            │   │   └── HomeComponent.vue
-            │   ├── info/
-            │   │   ├── Info.js
-            │   │   └── InfoComponent.vue
-            │   ├── login/
-            │   │   ├── Login.js
-            │   │   └── LoginComponent.vue
-            │   └── register/
-            │       ├── Register.js
-            │       └── RegisterComponent.vue
-            ├── router/
-            │   └── index.js
-            ├── services/
-            │   ├── Api.js
-            │   ├── HomeService.js
-            │   ├── InfoService.js
-            │   ├── LoginService.js
-            │   └── RegisterService.js
-            └── views/
-                ├── HomeView.vue
-                ├── InfoView.vue
-                ├── LoginView.vue
-                └── RegisterView.vue
+Directory structure:  
+└── samynandes-callsmanagement/  
+    ├── README.md  
+    ├── Backend/  
+    │   ├── package-lock.json  
+    │   ├── package.json  
+    │   ├── server.js  
+    │   ├── .gitignore  
+    │   └── src/  
+    │       ├── app.js  
+    │       ├── config/  
+    │       │   ├── db.config.js  
+    │       │   └── mongoose.config.js  
+    │       ├── controllers/  
+    │       │   ├── call.controllers.js  
+    │       │   └── user.controllers.js  
+    │       ├── middlewares/  
+    │       │   └── auth.js  
+    │       ├── models/  
+    │       │   ├── call.model.js  
+    │       │   └── user.model.js  
+    │       └── routes/  
+    │           ├── call.routes.js  
+    │           └── user.routes.js  
+    └── Frontend/  
+        ├── README.md  
+        ├── index.html  
+        ├── jsconfig.json  
+        ├── package-lock.json  
+        ├── package.json  
+        ├── vite.config.js  
+        ├── .gitignore  
+        └── src/  
+            ├── App.vue  
+            ├── mai
+
 
 # Installation
 
