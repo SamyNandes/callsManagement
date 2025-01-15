@@ -9,10 +9,10 @@ The gif above contains some features you can encounter in our application. â¬‡ï¸
 The main ones is:
 
 - Login and register.
-- User with his isAdmin role set to false can:
+- User with his admin role set to false can:
     - Create a call
     - See the status of his own calls
-- User with his isAdmin role set to true can:
+- User with his admin role set to true can:
     - See a call
     - Modify a call 
     - Delete a call
