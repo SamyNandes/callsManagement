@@ -19,9 +19,11 @@ export default {
   name: 'InfoComponent',
   data() {
     return {
+      isLogged: false,
       isAdmin: null,
       calls: null,
       doesCallsExist: null,
+      callsById: null,
     }
   },
   methods: {
@@ -29,6 +31,7 @@ export default {
       const data = await InfoService.showData()
       var state = data.dataOfUser.admin
       if (state == true) {
+        this.isLogged = true
         this.isAdmin = true
         this.calls = data.calls
         const sizeOfCalls = data.calls.length
@@ -38,7 +41,9 @@ export default {
           this.doesCallsExist = true
         }
       } else {
+        this.isLogged = true
         this.isAdmin = false
+        this.getInfoOfCallById()
       }
     },
     async removeCall() {
@@ -81,6 +86,10 @@ export default {
       }
       await this.getInfosOfCalls()
       await this.getInfosOfCalls() // Atualizar os dados mais de uma vez
+    },
+    async getInfoOfCallById() {
+      const callsDateById = await InfoService.getInfoOfCallById()
+      this.callsById = callsDateById
     },
   },
   mounted() {

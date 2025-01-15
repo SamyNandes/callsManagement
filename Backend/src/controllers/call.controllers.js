@@ -21,6 +21,19 @@ exports.createCall = async (req, res) => {
    }
 }
 
+// ==> Função assincrona que retorna todas as chamadas de acordo com o Id do user
+
+exports.callReturnById = async (req, res) => {
+    try {
+        const idUser = req.userToken._id
+        const collection = await callModel.find({idCallUser: idUser})
+        res.json(collection).status(200)
+    } catch (error) {
+        res.send(error.message).status(500)   
+    }
+}
+
+
 // ==> Função assincrona de retorno de chamada.
 exports.callReturn = async (req, res) => {
 try {
@@ -37,7 +50,6 @@ exports.callRemove = async (req, res) => {
 try {
     const idCall = req.params.id
     await callModel.findByIdAndDelete(idCall)
-    res.status(200).json({ message: " foi caralho "})
 } catch (error) {
     res.send({ message: `${error}`}).status(500)
 }

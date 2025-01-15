@@ -20,8 +20,11 @@ const auth = require("../middlewares/auth.js")
 // ==> Rota responsável por criar chamado: (POST): localhost:3000/api/createCall
 router.post('/createCall', auth, callController.createCall )
 
-// ==> Rota responsável por retornar as chamadas: (GET): localhost:3000/api/info
+// ==> Rota responsável por retornar todas as chamadas: (GET): localhost:3000/api/info
 router.get('/info', auth, callController.callReturn)
+
+// ==> Rota responsável por retornar as chamadas de acordo com o id: (GET): localhost:3000/api/returnCallsById
+router.get('/returnCallsById', auth, callController.callReturnById)
 
 // ==> Rota responsável por exluir chamada: (DELETE): /removeCall/:id
 router.delete('/removeCall/:id', callController.callRemove)

@@ -97,8 +97,41 @@
         </div>
       </div>
       <div v-else>
-        <h4>You don't have permissions to be here!</h4>
-        <RouterLink to="/home"> <button class="btn btn-primary"> Return to home page </button></RouterLink>
+        <div v-if="isLogged">
+          <h4>These are the status of your calls. Stay tunned!</h4>
+          <table class="table table-striped">
+            <thead>
+              <tr class="fw-bold">
+                <th scope="col">
+                  Title
+                </th>
+                <th scope="col">
+                  Description
+                </th>
+                <th scope="col">
+                  Status
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="( call, index ) in callsById">
+                <td>
+                  {{ call.title }}
+                </td>
+                <td>
+                  {{ call.description }}
+                </td>
+                <td>
+                  {{ call.stateCall }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div v-else>
+          <h4>Please, register or login to see your calls!</h4>
+          <RouterLink to="/home"> <button class="btn btn-primary"> Return to home page </button></RouterLink>
+        </div>
       </div>
     </div>
   </div>

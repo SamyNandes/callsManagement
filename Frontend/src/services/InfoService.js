@@ -21,6 +21,10 @@ export default {
     const data = await Api().get('/info')
     return data.data
   },
+  async getInfoOfCallById() {
+    const data = await Api().get(`/returnCallsById`)
+    return data.data
+  },
   async removeCall(id) {
     var path = `/removeCall/${id}`
     await Api().delete(path)
