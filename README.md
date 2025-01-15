@@ -4,7 +4,7 @@ An application for management of calls which contains two entities, admin and us
 
 
 # Getting started
----
+--
 **1.** **Node.js**
 
 Check if Node.js is already installed. Run the following command in the terminal:
