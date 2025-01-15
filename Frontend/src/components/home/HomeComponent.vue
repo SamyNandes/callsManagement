@@ -44,7 +44,7 @@
           <form class="m-3">
             <div class="form-group mb-3">
               <label for="exampleFormControlInput1">Issue Title</label>
-              <input autocomplete="off" type="email" class="form-control" v-model="dataCall.title"
+              <input autocomplete="off" type="text" class="form-control" v-model="dataCall.title"
                 :class="{ 'form control is-invalid': this.v$.dataCall.title.$error }" id="exampleFormControlInput1"
                 placeholder="Inform us your problem">
               <span v-if="this.v$.dataCall.title.$error" class="invalid-feedback">

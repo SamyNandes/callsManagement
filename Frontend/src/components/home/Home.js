@@ -12,7 +12,7 @@
 ------------------------------------------------------------------------*/
 
 import Api from '../../services/Api'
-import { required } from '@vuelidate/validators'
+import { required, maxLength } from '@vuelidate/validators'
 import useVuelidate from '@vuelidate/core'
 import swal from 'sweetalert'
 
@@ -73,7 +73,7 @@ export default {
   validations() {
     return {
       dataCall: {
-        title: { required },
+        title: { required, maxLength: maxLength(30) },
         description: { required },
       },
     }

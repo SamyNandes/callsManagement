@@ -40,7 +40,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr :v-for="( call, index ) in calls">
+              <tr v-for="( call, index ) in calls">
                 <td>
                   {{ call.title }}
                 </td>

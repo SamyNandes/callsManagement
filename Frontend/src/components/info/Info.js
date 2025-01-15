@@ -42,12 +42,8 @@ export default {
       }
     },
     async removeCall() {
-      var teste23 = []
       for (let i = 0; i < this.calls.length; i++) {
         var teste = document.getElementById('flexCheckDefault' + i).checked
-        var teste2 = document.getElementById('flexCheckDefault' + i).value
-        teste23.push(teste2)
-        console.log(teste23)
         if (teste == true) {
           var valor = this.calls[i]._id
           await InfoService.removeCall(valor)
