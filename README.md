@@ -3,7 +3,7 @@ An application for management of calls which contains two entities, admin and us
 
 # Features! 
 
-![gif contendo features da aplicação](assetsGit/gifApplication.gif)
+![gif contendo features da aplicação](AssetsGit/gifApplication.gif)
 
 # Getting started
 
